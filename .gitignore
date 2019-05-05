@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+/.idea
+*.iml
+.DS_Store
+.vscode
+gi
