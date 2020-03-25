@@ -43,10 +43,10 @@ function compile() {
 
 function distribute() {
     console.info(chalk`{green.bold [task]} {white.bold distribute}`);
-    fs.mkdirsSync("build/dist/lib");
-    fs.copySync("build/out/src", "build/dist/lib/", {dereference: true});
-    fs.copySync("package.json", "build/dist/package.json", {dereference: true});
-    fs.copySync("src", "build/dist/src", {dereference: true});
+    fs.mkdirsSync("build/lib");
+    fs.copySync("build/out/src", "build/lib/", {dereference: true});
+    fs.copySync("package.json", "build/package.json", {dereference: true});
+    fs.copySync("src", "build/src", {dereference: true});
     fs.removeSync("build/out");
 }
 
@@ -61,7 +61,6 @@ function build() {
     console.info(chalk`{yellow.bold -------------------------------------------------------------}`);
     console.info(chalk`{yellow.bold >>}`);
     console.info(chalk`{yellow.bold >> Build Successfully}`);
-    console.info(chalk`{yellow.bold >> Remember To Re-install In Our Projects, And Notify Others}`);
     console.info(chalk`{yellow.bold >>}`);
     console.info(chalk`{yellow.bold -------------------------------------------------------------}`);
 }
