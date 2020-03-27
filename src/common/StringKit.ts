@@ -14,4 +14,17 @@ export class TextKit {
         }
         return result;
     }
+
+    static getCookies(cookieString: string): {[key: string]: string} {
+        if (!cookieString) {
+            return {};
+        }
+        const cookieList = cookieString.split(";");
+        const cookies = {};
+        cookieList.forEach(_ => {
+            const [key, value] = _.split("=");
+            cookies[key.trim()] = value.trim();
+        });
+        return cookies;
+    }
 }
