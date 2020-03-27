@@ -1,3 +1,5 @@
+import {Dictionary} from "../type";
+
 export class TextKit {
     static truncate(text: string, maxLength: number, suffix: string = "…") {
         return text.length > maxLength ? text.substr(0, maxLength) + suffix : text;
@@ -15,7 +17,7 @@ export class TextKit {
         return result;
     }
 
-    static getCookies(cookieString: string): {[key: string]: string} {
+    static getCookies(cookieString: string): Dictionary<string> {
         if (!cookieString) {
             return {};
         }
