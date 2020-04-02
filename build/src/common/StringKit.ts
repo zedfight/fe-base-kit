@@ -1,3 +1,5 @@
+import {Dictionary} from "../type";
+
 export class TextKit {
     static truncate(text: string, maxLength: number, suffix: string = "…") {
         return text.length > maxLength ? text.substr(0, maxLength) + suffix : text;
@@ -13,5 +15,18 @@ export class TextKit {
             result = result.replace(`{${i + 1}}`, parameters[i]);
         }
         return result;
+    }
+
+    static getCookies(cookieString: string): Dictionary<string> {
+        if (!cookieString) {
+            return {};
+        }
+        const cookieList = cookieString.split(";");
+        const cookies = {};
+        cookieList.forEach(_ => {
+            const [key, value] = _.split("=");
+            cookies[key.trim()] = value.trim();
+        });
+        return cookies;
     }
 }
