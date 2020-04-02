@@ -1,4 +1,5 @@
 export declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export declare type FunctionType<P, T> = (...arg: P extends Array<infer K> ? K[] : never) => T;
 export declare type KeysOfType<T, ExpectedKeyType> = {
     [P in keyof T]: T[P] extends ExpectedKeyType ? P : never;
 }[keyof T];

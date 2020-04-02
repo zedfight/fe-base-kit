@@ -2,10 +2,10 @@
 export * from "./type";
 
 // common
-export * from "./common/ArrayKit";
+export * from "./base/array";
+export * from "./base/object";
 export * from "./common/DateKit";
 export * from "./common/IDGenerator";
-export * from "./common/ObjectKit";
 export * from "./common/RandomKit";
 export * from "./common/RegexKit";
 export * from "./common/StringKit";

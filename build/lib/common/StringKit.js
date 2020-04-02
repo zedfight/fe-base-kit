@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __read } from "tslib";
 var TextKit = /** @class */ (function () {
     function TextKit() {
     }
@@ -27,7 +27,7 @@ var TextKit = /** @class */ (function () {
         var cookieList = cookieString.split(";");
         var cookies = {};
         cookieList.forEach(function (_) {
-            var _a = tslib_1.__read(_.split("="), 2), key = _a[0], value = _a[1];
+            var _a = __read(_.split("="), 2), key = _a[0], value = _a[1];
             cookies[key.trim()] = value.trim();
         });
         return cookies;
