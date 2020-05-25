@@ -44,3 +44,23 @@ export function eachArray<T, V>(array: T[], mapperCallback: (item: T, index: num
 export function hasIntersection<T>(a: T[], b: T[]): boolean {
     return a.some(_ => b.includes(_));
 }
+
+export function swapArray<T>(array: T[], a: number, b: number): T[] {
+    if (array.length < a || array.length < b) {
+        return array;
+    } else {
+        const result = [...array];
+        result[a] = result.splice(b, 1, result[a])[0];
+        return result;
+    }
+}
+
+export function diffArray<T>(a: T[], b: T[]): T[] {
+    return a.concat(b).filter(v => !a.includes(v) || !b.includes(v));
+}
+
+export function duplicate<T>(array: T[]): T[] {
+    return Array.from(new Set(array));
+}
+
+// ref:https://blog.csdn.net/qq_31126175/article/details/81485884

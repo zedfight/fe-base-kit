@@ -27,6 +27,38 @@ export function isEmpty(object: object): boolean {
     return Object.keys(object).length === 0;
 }
 
+export function file2Base64(file: File | Blob) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.addEventListener("load", () => resolve(reader.result));
+        reader.addEventListener("error", () => reject());
+    }).then(
+        value => {
+            return value;
+        },
+        () => {
+            return false;
+        }
+    );
+}
+
+export function getImageInfo(url: string) {
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = url;
+        image.onload = () => resolve(image);
+        image.onerror = () => reject();
+    }).then(
+        value => {
+            return value;
+        },
+        () => {
+            return false;
+        }
+    );
+}
+
 /**
  * Not applicable to object with function fields
  */
