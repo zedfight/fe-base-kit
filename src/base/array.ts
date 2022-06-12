@@ -45,6 +45,10 @@ export function hasIntersection<T>(a: T[], b: T[]): boolean {
     return a.some(_ => b.includes(_));
 }
 
+export function intersection<T>(a: T[], b: T[]): T[] {
+    return a.filter(_ => b.includes(_));
+}
+
 export function swapArray<T>(array: T[], a: number, b: number): T[] {
     if (array.length < a || array.length < b) {
         return array;
